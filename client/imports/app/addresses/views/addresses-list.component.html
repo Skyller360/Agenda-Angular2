@@ -1,0 +1,22 @@
+<div class="container">
+  <addresses-form></addresses-form>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Mail</th>
+          <th>Country</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let address of addresses | async">
+          <th scope="row"><a [routerLink]="['/address', address._id]">{{address.firstName}}</a></th>
+          <td>{{address.lastName}}</td>
+          <td>{{address.mail}}</td>
+          <td>{{address.country}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <a class="btn btn-primary btn-large col-md-2 col-md-offset-10" [routerLink]="['/']">Back</a>
+</div>
